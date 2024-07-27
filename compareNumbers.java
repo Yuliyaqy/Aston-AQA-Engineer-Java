@@ -1,6 +1,6 @@
 public class compareNumbers {
     public static void main(String[] args) {
-        int a = 85;
+        int a = 58;
         int b = 46;
         if (a >= b){
             System.out.println("a >= b");
