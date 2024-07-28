@@ -5,9 +5,22 @@ public class homeWorkL7 {
      */
 
     public static void main(String[] args) {
+
+        // К заданию 5.
         int c = sum(7, 9);
         boolean sum = (c >= 10) && (c <= 20);
+
+        // К заданию 6.
         task6(3);
+
+        // К заданию 7.
+        int d = 15;
+        boolean task7 = d < 0;
+
+        // К заданию 8.
+        task8("Kira", 16);
+        task8("Kira", 16);
+        task8("Kira", 16);
     }
     static int sum(int a, int b) {
         return a + b;
@@ -23,6 +36,24 @@ public class homeWorkL7 {
         } else {
             System.out.println("Передается отрицательное число");
         }
+    }
+
+    /* 7. Напишите метод, которому в качестве параметра передается целое число. Метод должен вернуть true, если число
+    отрицательное, и вернуть false если положительное.
+    Замечание: ноль считаем положительным числом.
+     */
+
+    static int task7(int d) {
+        return d;
+    }
+
+    /*
+    8. Напишите метод, которому в качестве аргументов передается строка и число, метод должен отпечатать в консоль
+    указанную строку, указанное количество раз;
+     */
+
+    static void task8(String name, int age){
+        System.out.println(name + " " + age);
     }
 
 }
