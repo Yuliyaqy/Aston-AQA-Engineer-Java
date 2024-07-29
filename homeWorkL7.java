@@ -35,9 +35,6 @@ public class homeWorkL7 {
 
         task12();
 
-        // К заданию 13.
-
-        task13();
 
     }
 
