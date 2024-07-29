@@ -39,6 +39,14 @@ public class homeWorkL7 {
 
         task13();
 
+        // К заданию 13.
+
+        task13();
+
+        // К заданию 14.
+
+        task14(5, 8);
+
 
     }
 
@@ -146,6 +154,18 @@ public class homeWorkL7 {
                 System.out.printf("%d ", nums2[i][j]);
             }
             System.out.println();
+        }
+    }
+
+    /* 14. Написать метод, принимающий на вход два аргумента: len и initialValue, и возвращающий одномерный массив
+    типа int длиной len, каждая ячейка которого равна initialValue.
+     */
+
+    public static void task14(int len, int initialValue) {
+        int[] nums3 = new int[len];
+        for (int i = 0; i < nums3.length; i++) {
+            nums3[i] = initialValue;
+            System.out.println("nums[" + i + "] = " + nums3[i]);
         }
     }
 
