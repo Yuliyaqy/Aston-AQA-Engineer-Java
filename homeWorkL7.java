@@ -2,58 +2,128 @@ public class homeWorkL7 {
 
     public static void main(String[] args) {
 
+        // К заданию 1.
+        System.out.println("\nЗадание 1.\n");
+        printThreeWords();
+
+        // К заданию 2.
+        System.out.println("\nЗадание 2.\n");
+        checkSumSign();
+
+        // К заданию 3.
+        System.out.println("\nЗадание 3.\n");
+        printColor();
+
+        // К заданию 4.
+        System.out.println("\nЗадание 4.\n");
+        compareNumbers();
+
         // К заданию 5.
-        int c = sum(7, 9);
-        boolean sum = (c >= 10) && (c <= 20);
+        System.out.println("\nЗадание 5.\n");
+        System.out.println(task5(7, 9));
 
         // К заданию 6.
+        System.out.println("\nЗадание 6.\n");
         task6(3);
 
         // К заданию 7.
-        int d = 15;
-        boolean task7 = d < 0;
+        System.out.println("\nЗадание 7.\n");
+        System.out.println(task7(-3));
 
         // К заданию 8.
-        task8("Kira", 16);
-        task8("Kira", 16);
-        task8("Kira", 16);
+        System.out.println("\nЗадание 8.\n");
+        task8("Kate", 25);
 
         // К заданию 9.
-
-        int year = 2008;
-        boolean task9 = (year % 400 == 0) || (year % 100 != 0 && year % 4 == 0);
+        System.out.println("\nЗадание 9.\n");
+        System.out.println(task9(2008));
 
         // К заданию 10.
-
+        System.out.println("\nЗадание 10.\n");
         task10();
 
         // К заданию 11.
-
+        System.out.println("\nЗадание 11.\n");
         task11();
 
         // К заданию 12.
-
+        System.out.println("\nЗадание 12.\n");
         task12();
 
-
-
         // К заданию 13.
-
+        System.out.println("\nЗадание 13.\n");
         task13();
 
         // К заданию 14.
-
+        System.out.println("\nЗадание 14.\n");
         task14(5, 8);
 
+    }
 
+    /* 1. Создайте метод printThreeWords(), который при вызове должен отпечатать в столбец три слова: Orange, Banana,
+    Apple.
+     */
+
+    public static void printThreeWords() {
+        System.out.println("Orange");
+        System.out.println("Banana");
+        System.out.println("Apple");
+    }
+
+    /* 2. Создайте метод checkSumSign(), в теле которого объявите две int переменные a и b, и инициализируйте их любыми
+    значениями, которыми захотите. Далее метод должен просуммировать эти переменные, и если их сумма больше или равна
+    0, то вывести в консоль сообщение “Сумма положительная”, в противном случае - “Сумма отрицательная”.
+     */
+
+    public static void checkSumSign() {
+        int a = 5;
+        int b = 3;
+        if (a + b >= 0) {
+            System.out.println("Сумма положительная");
+        } else {
+            System.out.println("Сумма отрицательная");
+        }
+    }
+
+    /* 3. Создайте метод printColor() в теле которого задайте int переменную value и инициализируйте ее любым значением.
+     Если value меньше 0 (0 включительно), то в консоль метод должен вывести сообщение “Красный”, если лежит в пределах
+     от 0 (0 исключительно) до 100 (100 включительно), то “Желтый”, если больше 100 (100 исключительно) - “Зеленый”.
+     */
+
+    public static void printColor() {
+        int value = 23;
+        if (value <= 0){
+            System.out.println("Красный");
+        } else if (value <= 100){
+            System.out.println("Желтый");
+        } else {
+            System.out.println("Зеленый̆");
+        }
+    }
+
+    /* 4. Создайте метод compareNumbers(), в теле которого объявите две int переменные a и b, и инициализируйте их
+    любыми значениями, которыми захотите. Если a больше или равно b, то необходимо вывести в консоль сообщение
+    “a >= b”, в противном случае “a < b”;
+     */
+
+    public static void compareNumbers() {
+        int a = 58;
+        int b = 46;
+        if (a >= b){
+            System.out.println("a >= b");
+        } else {
+            System.out.println("a < b");
+        }
     }
 
      /* 5. Напишите метод, принимающий на вход два целых числа и проверяющий, что их сумма лежит в пределах от 10 до 20
     (включительно), если да – вернуть true, в противном случае – false.
      */
 
-    static int sum(int a, int b) {
-        return a + b;
+    static boolean task5(int a, int b) {
+        int sum = a + b;
+        if (sum >=10 && sum <=20) return true;
+        else return false;
     }
 
     /* 6. Напишите метод, которому в качестве параметра передается целое число, метод должен напечатать в консоль,
@@ -73,8 +143,9 @@ public class homeWorkL7 {
     Замечание: ноль считаем положительным числом.
      */
 
-    static int task7(int d) {
-        return d;
+    static boolean task7(int d) {
+        if (d < 0) return true;
+        else return false;
     }
 
     /*
@@ -82,15 +153,19 @@ public class homeWorkL7 {
     указанную строку, указанное количество раз;
      */
 
-    static void task8(String name, int age){
-        System.out.println(name + " " + age);
+    public static void task8(String str, int age) {
+        String strRepeat = "Kate\n".repeat(5);
+        System.out.println(strRepeat);
     }
 
     /* 9. Напишите метод, который определяет, является ли год високосным, и возвращает boolean (високосный - true, не
     високосный - false). Каждый 4-й год является високосным, кроме каждого 100-го, при этом каждый 400-й – високосный.
      */
 
-    static void task9(int year) {
+    static boolean task9(int year) {
+        if((year % 400 == 0) || (year % 100 != 0 && year % 4 == 0))
+            return true;
+        else return false;
     }
 
     /* 10. Задать целочисленный массив, состоящий из элементов 0 и 1. Например: [ 1, 1, 0, 0, 1, 0, 1, 1, 0, 0 ]. С
@@ -145,7 +220,7 @@ public class homeWorkL7 {
         for (int i = 0; i < nums2.length; i++) {
             for(int j = 0; j < nums2[i].length; j++){
                 if (i == j) {
-                nums2[i][j] = 1;
+                    nums2[i][j] = 1;
                 } else {
                     nums2[i][j] = 0;
                 }
