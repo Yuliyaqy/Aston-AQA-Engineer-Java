@@ -1,11 +1,11 @@
 public class Employee {
 
-        String fullName;
-        String position;
-        String email;
-        String phoneNumber;
-        int salary;
-        int age;
+        public String fullName;
+        public String position;
+        public String email;
+        public String phoneNumber;
+        public int salary;
+        public int age;
 
     public Employee(String fullName, String position, String email, String phoneNumber, int salary, int age){
             this.fullName = fullName;
@@ -14,11 +14,6 @@ public class Employee {
             this.phoneNumber = phoneNumber;
             this.salary = salary;
             this.age = age;
-    }
-
-    public void info() {
-        System.out.println("ФИО: " + fullName + "; должность: " + position + "; email: " + email +
-                ";телефон: " + phoneNumber + "; зарплата: " + salary + "; возраст: " + age);
     }
 
     public static void main(String[] args) {
