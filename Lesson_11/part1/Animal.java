@@ -1,4 +1,4 @@
-package Lesson_11;
+package Lesson_11.part1;
 
 public class Animal {
     static int countAnimal = 0;
