@@ -3,6 +3,8 @@ package by.mts;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.util.List;
 
@@ -33,4 +35,31 @@ public class MTSAutoTest extends WebDriverSettings{
         assertEquals(expectedUrl, actualUrl, "URL после перехода по ссылке не соответствует ожидаемому");
     }
 
+    @Test
+    public void verifyOnlineReplenishmentProcess() {
+        WebElement serviceDropDown = driver.findElement(By.xpath(".//span[@class = 'select__arrow']"));
+        serviceDropDown.click();
+        WebElement communicationServices = driver.findElement(By.xpath(".//ul[@class = 'select__list']/li[1]/p"));
+        communicationServices.click();
+
+        WebElement phoneNumberField = driver.findElement(By.xpath(".//input[@id = 'connection-phone']"));
+        phoneNumberField.click();
+        phoneNumberField.sendKeys("297777777");
+
+        WebElement amountDeposit = driver.findElement(By.xpath(".//input[@id = 'connection-sum']"));
+        amountDeposit.click();
+        amountDeposit.sendKeys("30");
+
+        WebElement continueButton = driver.findElement(By.xpath(".//form[@class = 'pay-form opened']/button"));
+        continueButton.click();
+        new WebDriverWait(driver, 30).until(ExpectedConditions.elementToBeClickable(By.xpath(".//form[@class = 'pay-form opened']/button"))).click();
+        driver.switchTo().frame(driver.findElement(By.xpath(".//iframe[@class = \"bepaid-iframe\"]")));
+        WebElement windowPay = driver.findElement(By.xpath(".//div[@class = 'app-wrapper__content']"));
+        if (windowPay.isDisplayed()) {
+            System.out.println("Окно формы оплаты открылось успешно");
+        } else {
+            System.out.println("Окно формы оплаты не найдено");
+        }
+        driver.switchTo().defaultContent();
+    }
 }

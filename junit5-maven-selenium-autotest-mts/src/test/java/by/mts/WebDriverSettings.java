@@ -2,6 +2,8 @@ package by.mts;
 
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 import java.util.concurrent.TimeUnit;
@@ -16,6 +18,8 @@ public class WebDriverSettings {
         driver = new ChromeDriver();
         driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
         driver.get("https://www.mts.by/");
+        WebElement cookieButton = driver.findElement(By.xpath("//button[contains(text(), 'Принять')]"));
+        cookieButton.click();
     }
 
     @AfterEach
