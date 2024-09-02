@@ -3,6 +3,7 @@ package by.mts;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.openqa.selenium.By;
+import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
@@ -18,8 +19,18 @@ public class WebDriverSettings {
         driver = new ChromeDriver();
         driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
         driver.get("https://www.mts.by/");
-        WebElement cookieButton = driver.findElement(By.xpath("//button[contains(text(), 'Принять')]"));
-        cookieButton.click();
+        try {
+            WebElement cookieButton = driver.findElement(By.xpath("//button[contains(text(), 'Принять')]"));
+            if (cookieButton.isDisplayed()) {
+                cookieButton.click();
+                System.out.println("Куки успешно закрыты.");
+            }
+        } catch (org.openqa.selenium.NoSuchElementException e) {
+                System.out.println("Куки не закрыты: элемент не найден.");
+        } catch (TimeoutException e) {
+            System.out.println("Куки не закрыты: время ожидания истекло");
+        }
+
     }
 
     @AfterEach

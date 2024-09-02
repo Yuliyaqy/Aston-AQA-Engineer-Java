@@ -52,7 +52,7 @@ public class MTSAutoTest extends WebDriverSettings{
 
         WebElement continueButton = driver.findElement(By.xpath(".//form[@class = 'pay-form opened']/button"));
         continueButton.click();
-        new WebDriverWait(driver, 30).until(ExpectedConditions.elementToBeClickable(By.xpath(".//form[@class = 'pay-form opened']/button"))).click();
+        new WebDriverWait(driver, 20).until(ExpectedConditions.elementToBeClickable(By.xpath(".//form[@class = 'pay-form opened']/button"))).click();
         driver.switchTo().frame(driver.findElement(By.xpath(".//iframe[@class = \"bepaid-iframe\"]")));
         WebElement windowPay = driver.findElement(By.xpath(".//div[@class = 'app-wrapper__content']"));
         if (windowPay.isDisplayed()) {
