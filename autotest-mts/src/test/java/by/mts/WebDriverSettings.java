@@ -15,7 +15,7 @@ public class WebDriverSettings {
 
     @BeforeEach
     public void setUp() {
-        System.setProperty("webdriver.chrome.driver", "D:\\Rabota\\Git\\Aston-AQA-Engineer-Java\\junit5-maven-selenium-autotest-mts\\src\\main\\resources\\chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver", "src\\main\\resources\\chromedriver.exe");
         driver = new ChromeDriver();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
         driver.get("https://www.mts.by/");
